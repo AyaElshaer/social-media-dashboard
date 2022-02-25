@@ -186,6 +186,7 @@ main .social {
   font-size: 1.2rem;
   color: var(--LimeGreen);
   font-weight: bold;
+    margin-left: 0.5rem;
 }
 .down span {
   font-size: 1.2rem;
