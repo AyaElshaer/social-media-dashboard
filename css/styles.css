@@ -277,4 +277,8 @@ main p.light-para {
     justify-content: space-between;
     margin-top: 1.5rem;
   }
+
+  .social-card .social-icon .user {
+      margin-left: 1rem;
+  }
 }
