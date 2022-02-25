@@ -192,6 +192,7 @@ main .social {
   font-size: 1.2rem;
   color: var(--BrightRed);
   font-weight: bold;
+  margin-left: 0.5rem;
 }
 
 /* overview */
