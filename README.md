@@ -10,6 +10,7 @@ This is a solution to the [Social media dashboard with theme switcher challenge 
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+- [Author](#author)
 
 
 ## Overview
@@ -38,7 +39,9 @@ Users should be able to:
 - CSS Grid
 - js
 
+## Author
 
+- Frontend Mentor - [link](https://www.frontendmentor.io/solutions/responsive-page-using-css-flexbox-and-grid-AIQ0FQKFC)
 ### Screenshot
 
 
