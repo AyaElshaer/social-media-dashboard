@@ -5,92 +5,150 @@
   --Twitter: hsl(203, 89%, 53%);
   --YouTube: hsl(348, 97%, 39%);
 
-  /* Light Theme */
-  --White-BG: hsl(0, 0%, 100%);
-  --Top-BG-Pattern: hsl(225, 100%, 98%);
-  --Card-BG: hsl(227, 47%, 96%);
-  --Dark-Grayish-Blue: hsl(228, 12%, 44%);
-  --Very-Dark-Blue: hsl(230, 17%, 14%);
-  --toggle: hsl(230, 22%, 74%);
-
+  
   /* Dark Theme */
-  --Very-Dark-Blue-BG: hsl(230, 17%, 14%);
-  --Dark-Top-BG-Pattern: hsl(232, 19%, 15%);
-  --Dark-Card-BG: hsl(228, 28%, 20%);
-  --Desaturated-Blue: hsl(228, 34%, 66%);
-  --White: hsl(0, 0%, 100%);
+  --bg-color: hsl(230, 17%, 14%);
+  --top-bg-pattern: hsl(232, 19%, 15%);
+  --card-bg: hsl(228, 28%, 20%);
+  --desaturated-blue: hsl(228, 34%, 66%);
+  --heading-color: hsl(0, 0%, 100%);
+  --card-hover:  hsl(228deg 18% 26%);
+  --overviw-heading:hsl(0, 0%, 100%);
 }
+
+.light-theme{
+  --bg-color: hsl(0, 0%, 100%);
+  --top-bg-pattern: hsl(225, 100%, 98%);
+  --card-bg: hsl(227, 47%, 96%);
+  --desaturated-blue: hsl(228, 12%, 44%);
+  --heading-color:#161515;
+  --VeryDarkBlue: hsl(230, 17%, 14%);
+  --toggle: hsl(230, 22%, 74%);
+  --card-hover: #eee;
+  --overviw-heading:hsl(228, 12%, 44%);
+}
+
 
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
+
 html {
-  font-size: 62.5%;
+font-size: 62.5%;
+
 }
-body {
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(
-    var(--Dark-Top-BG-Pattern) 0%,
-    var(--Dark-Top-BG-Pattern) 30%,
-    var(--Very-Dark-Blue-BG) 30%,
-    var(--Very-Dark-Blue-BG) 100%
+
+/* body{
+  background-image: linear-gradient(
+    var(--top-bg-pattern) 0%,
+    var(--top-bg-pattern) 30%,
+    var(--bg-color) 30%,
+    var(--bg-color) 100%
   );
   background-repeat: no-repeat;
+  font-family: "Inter", sans-serif;
+} */
+
+
+html {
+  font-size: 62.5%;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  background-image: linear-gradient(
+      hsl(232, 19%, 15%) 0%,
+      hsl(232, 19%, 15%) 30%,
+      hsl(230, 17%, 14%) 30%,
+      hsl(230, 17%, 14%) 100%
+    );
+  background-repeat: no-repeat;
   min-height: 100vh;
+  z-index: 1;
 }
+
+html::before {
+  position: absolute;
+  content: "";
+  top: 0;right: 0;
+  bottom: 0;left: 0;
+  background-image: linear-gradient(
+      hsl(225, 100%, 98%) 0%,
+      hsl(225, 100%, 98%) 30%,
+    hsl(0, 0%, 100%) 30%,
+    hsl(0, 0%, 100%) 100%
+  );
+  z-index: -3;
+  transition: opacity 0.4s ease-in;
+  opacity: 0;
+}
+
+html.light::before {
+  opacity: 1;
+}
+
+
+
 .grid-4 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
   justify-content: center;
   align-items: center;
 }
+
 .row {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .col {
   display: flex;
   flex-direction: column;
 }
+
 p {
-  font-size: 1.4rem;
-  color: var(--Desaturated-Blue);
+  font-size: 1.8rem;
+  color: var(--desaturated-blue);
 }
+
 h1,
 h2 {
-  color: var(--White);
+  color: var(--heading-color);
+  transition: color 0.4s ease-out;
 }
+
 .up,
 .down {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
+
 .card {
   cursor: pointer;
 }
+
 .card:hover {
-  background-color: hsl(228deg 18% 26%) !important;
+  background-color: var(--card-hover) !important;
 }
 
 /* header */
 
 main.container {
-  margin: 3rem 8rem;
+  margin: 3rem 9rem;
 }
+
 main header {
   justify-content: space-between;
 }
 
 main header h1.heading {
-  font-size: 2.5rem;
-  color: var(--White);
+  font-size: 3rem;
+  color: var(--heading-color);
 }
 
 .header div.social-header {
@@ -99,6 +157,7 @@ main header h1.heading {
 
 .social-header p {
   margin-top: 0.5rem;
+  font-size: 1.8rem;
 }
 
 main .header .theme {
@@ -106,11 +165,7 @@ main .header .theme {
   align-items: center;
 }
 
-.header .theme p {
-  font-weight: bold;
-}
-
- header button {
+header button {
   width: 4.5rem;
   height: 2.2rem;
   margin-left: 1rem;
@@ -121,37 +176,55 @@ main .header .theme {
   cursor: pointer;
 }
 
- header button .switcher {
+header button .switcher {
   width: 1.8rem;
   height: 1.8rem;
   border-radius: 50%;
-  background-color: var(--Dark-Card-BG);
+  background-color: var(--card-bg);
   position: absolute;
   left: 2px;
   top: 2px;
 }
 
-/* dashboard */
+/* Light Theme */
 
-main .social {
+#theme-btn.toggle {
+  background: var(--toggle);
+}
+#theme-btn.toggle:hover {
+  background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+.switcher.active {
+  left: 2.4rem;
+  background-color: var(--top-bg-pattern);
+}
+
+ /* dashboard */
+
+ main .social {
   margin: 5rem 0;
 }
+
 .dashboard .social-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: var(--Dark-Card-BG);
+  background-color: var(--card-bg);
   padding: 3rem;
   border-radius: 0.5rem;
   position: relative;
+  transition: background-color 0.4s ease-in;
 }
+
 .facebook {
   border-top: 5px solid var(--Facebook);
 }
+
 .twitter {
   border-top: 5px solid var(--Twitter);
 }
+
 .instagram::before {
   content: " ";
   width: 98%;
@@ -163,100 +236,76 @@ main .social {
   border-radius: 0.5rem;
   z-index: -2;
 }
+
 .youtube {
   border-top: 5px solid var(--YouTube);
 }
+
 .social-card .social-icon {
   justify-content: center;
 }
+
 .social-card .followers {
   margin: 2rem 0;
 }
+
 .followers h2 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
 }
+
 .followers p {
   letter-spacing: 5px;
-  font-size: 1rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
+  margin-top: 0.5rem;
 }
+
 .up span {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--LimeGreen);
-  font-weight: bold;
-    margin-left: 0.5rem;
-}
-.down span {
-  font-size: 1.2rem;
-  color: var(--BrightRed);
-  font-weight: bold;
   margin-left: 0.5rem;
 }
 
-/* overview */
-.overview {
-  margin-top: 4rem;
+.down span {
+  font-size: 1.5rem;
+  color: var(--BrightRed);
+  margin-left: 0.5rem;
 }
+
+ /* overview */
+ .overview {
+  margin-top: 5rem;
+}
+
 .overview .heading {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
+  color: var(--overviw-heading);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
 }
+
 .overview .overview-card {
-  background-color: var(--Dark-Card-BG);
+  background-color: var(--card-bg);
   padding: 2rem;
   border-radius: 0.5rem;
+  transition: background-color 0.4s ease-in;
 }
+
 .overview-card .icon,
 .overview-card .stats {
   justify-content: space-between;
   margin: 2rem 0;
 }
+
 .stats h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
+
 .overview-card .up,
 .overview-card .down {
   display: flex;
   align-items: center;
-}
-
-/* Light Theme */
-#theme-btn.toggle {
-  background: var(--toggle);
-}
-#theme-btn.toggle:hover {
-  background: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
-}
-.switcher.active {
-  left: 2.4rem;
-  background-color: var(--Top-BG-Pattern);
-}
-body.light {
-  background: linear-gradient(
-    var(--Top-BG-Pattern) 0%,
-    var(--Top-BG-Pattern) 30%,
-    var(--White-BG) 30%,
-    var(--White-BG) 100%
-  );
-}
-.heading.heading-light,
-.social h2.heading-light {
-  color: #161515;
-}
-.overview h2.overview_light {
-  color: var(--Dark-Grayish-Blue);
-}
-main p.light-para {
-  color: var(--Dark-Grayish-Blue);
-  font-size: 1.3rem;
-}
-.card.card-light {
-  background-color: var(--Card-BG);
-}
-.card.card-light:hover {
-  background: #eee !important ;
 }
 
 
@@ -264,16 +313,19 @@ main p.light-para {
   main.container {
     margin: 3rem;
   }
+
   main .header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
   main .header div.social-header {
     width: 100%;
     padding-bottom: 2.5rem;
-    border-bottom: 0.5px solid var(--Dark-Grayish-Blue);
+    border-bottom: 0.5px solid hsl(230, 22%, 74%);;
   }
+
   main .header div.theme {
     width: 100%;
     justify-content: space-between;
@@ -281,6 +333,35 @@ main p.light-para {
   }
 
   .social-card .social-icon .user {
-      margin-left: 1rem;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .up span {
+    font-size: 1.3rem;
+  }
+  .followers h2{
+      font-size: 4.5rem;
+  }
+  main header h1.heading {
+    font-size: 2.3rem;
+}
+
+.overview .heading{
+  font-size: 2rem;
+}
+
+.social-header p ,
+.theme p,
+.overview-card .icon p{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+}
+
+@media (min-width: 1440px) {
+  .grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
