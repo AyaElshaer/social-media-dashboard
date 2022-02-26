@@ -5,7 +5,6 @@
   --Twitter: hsl(203, 89%, 53%);
   --YouTube: hsl(348, 97%, 39%);
 
-  
   /* Dark Theme */
   --bg-color: hsl(230, 17%, 14%);
   --top-bg-pattern: hsl(232, 19%, 15%);
@@ -28,7 +27,6 @@
   --overviw-heading:hsl(228, 12%, 44%);
 }
 
-
 *,
 *::after,
 *::before {
@@ -36,23 +34,6 @@ box-sizing: border-box;
 margin: 0;
 padding: 0;
 }
-
-html {
-font-size: 62.5%;
-
-}
-
-/* body{
-  background-image: linear-gradient(
-    var(--top-bg-pattern) 0%,
-    var(--top-bg-pattern) 30%,
-    var(--bg-color) 30%,
-    var(--bg-color) 100%
-  );
-  background-repeat: no-repeat;
-  font-family: "Inter", sans-serif;
-} */
-
 
 html {
   font-size: 62.5%;
@@ -88,8 +69,6 @@ html::before {
 html.light::before {
   opacity: 1;
 }
-
-
 
 .grid-4 {
   display: grid;
@@ -356,7 +335,6 @@ header button .switcher {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
 
 }
 
