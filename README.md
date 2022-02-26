@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/AyaElshaer/social-media-dashboard)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [](https://github.com/AyaElshaer/social-media-dashboard)
+- Live Site URL: [](https://social-media-dashboard-ayaramadan.vercel.app/)
 
 ## My process
 
