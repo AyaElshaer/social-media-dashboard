@@ -44,5 +44,3 @@ Users should be able to:
 
 ![dark-desktop](./screenshot/dark-desktop.png)
 ![light-desktop](./screenshot/light-desktop.png)
-![light-mobile](./screenshot/light--mobile.png)
-![dark-mobile](./screenshot/dark-mobile.png)
